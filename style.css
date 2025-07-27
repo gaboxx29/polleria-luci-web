@@ -1,0 +1,642 @@
+/* Colores de la Pollería Luci's */
+:root {
+    --orange: #FF8C00;      /* Naranja vibrante */
+    --gold: #FFD700;        /* Dorado/Amarillo - El protagonista */
+    --red: #D62828;         /* Rojo más intenso para énfasis */
+    --light-orange: #FFECD7; /* Naranja muy claro para fondos */
+    --white-smoke: #F5F5F5; /* Blanco ahumado para secciones sutiles */
+    --dark-brown: #4A2B00;  /* Marrón oscuro profundo */
+    --text-color: #333333;   /* Color de texto general (para fondos claros) */
+    --white: #FFFFFF;       /* Blanco puro para fondos oscuros */
+    --hero-button-text: #FFFFFF; /* Color de texto para el botón naranja del hero */
+}
+
+/* Base Global */
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-brown); /* Por defecto, para fondos claros */
+    font-weight: 700;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    color: var(--text-color); /* Por defecto, para fondos claros */
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Colores de Fondo y Texto */
+.bg-orange { background-color: var(--orange) !important; }
+.bg-gold { background-color: var(--gold) !important; }
+.bg-red { background-color: var(--red) !important; }
+.bg-light-orange { background-color: var(--light-orange) !important; }
+.bg-white-smoke { background-color: var(--white-smoke) !important; }
+.bg-dark-brown { background-color: var(--dark-brown) !important; }
+
+.text-orange { color: var(--orange) !important; }
+.text-gold { color: var(--gold) !important; }
+.text-red { color: var(--red) !important; }
+.text-white { color: var(--white) !important; }
+.text-dark-brown { color: var(--dark-brown) !important; }
+
+/* Gradiente para CTA */
+.bg-orange-gradient {
+    background: linear-gradient(135deg, var(--orange) 0%, #FF6B00 100%);
+}
+
+/* Header / Navbar */
+header {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra más pronunciada */
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+    position: sticky; /* Sticky Navbar */
+    top: 0;
+    width: 100%;
+}
+
+/* Ajustes precisos para el logo en el header (PNG transparente) */
+.navbar-brand.logo-brand {
+    display: flex; /* Para alinear verticalmente el logo */
+    align-items: center; /* Centra verticalmente el logo dentro del contenedor */
+    height: auto; /* Dejar que la altura se ajuste al contenido */
+    padding: 5px 0; /* Añade un poco de padding vertical si es necesario para el contenedor del logo */
+}
+
+.logo-brand img {
+    max-height: 80px; /* Ajusta este valor según el tamaño deseado del logo */
+    height: auto; /* Permite que la altura se ajuste proporcionalmente */
+    width: auto; /* Permite que el ancho se ajuste proporcionalmente */
+    border: none !important; /* Asegúrate de que no haya bordes */
+    background-color: transparent !important; /* Asegúrate de que el fondo sea transparente */
+    padding: 0 !important; /* Elimina cualquier padding innecesario */
+    margin: 0 !important; /* Elimina cualquier margen que pueda causar el espacio */
+    box-shadow: 0 0 10px 5px rgba(255, 215, 0, 0.7); /* **CÓDIGO AÑADIDO/MODIFICADO PARA EL BRILLO DEL LOGO** */
+    filter: none !important; /* Elimina cualquier filtro aplicado previamente */
+    -webkit-filter: none !important; /* Para navegadores Safari/Chrome */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añadimos transición al box-shadow */
+}
+.logo-brand img:hover {
+    transform: scale(1.05); /* Pequeña animación al pasar el ratón */
+    box-shadow: 0 0 15px 7px rgba(255, 215, 0, 0.9); /* **BRILLO MÁS INTENSO AL HOVER** */
+}
+
+/* Ajuste adicional para el padding del navbar si el logo parece muy pegado */
+.navbar {
+    padding-top: 0.5rem; /* Ajusta estos valores según sea necesario */
+    padding-bottom: 0.5rem;
+}
+
+header .navbar-nav .nav-link {
+    font-weight: 600;
+    padding: 0.75rem 1.2rem;
+    position: relative;
+    color: var(--gold) !important; /* Color inicial de los enlaces */
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+    transition: all 0.3s ease-in-out;
+}
+header .navbar-nav .nav-link:hover {
+    color: var(--white) !important; /* CAMBIO CLAVE: Texto blanco al pasar el cursor para visibilidad */
+    text-shadow: none; /* Elimina la sombra dorada al pasar el cursor si prefieres */
+}
+/* Subrayado animado para nav links */
+header .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background-color: var(--white); /* Color del subrayado por defecto (blanco) */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
+header .navbar-nav .nav-link:hover::after {
+    width: 80%;
+    background-color: var(--gold); /* CAMBIO: Subrayado dorado al pasar el cursor */
+}
+
+/* Navbar Toggler Icon */
+.navbar-toggler {
+    border: none;
+    padding: 0;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+.navbar-toggler i {
+    color: var(--gold) !important;
+    transition: transform 0.3s ease;
+}
+.navbar-toggler:hover i {
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), /* Overlay oscuro semitransparente */
+        url('imagenes/polleria.jpg') no-repeat center center/cover; /* Tu nueva imagen de fondo */
+    min-height: 70vh;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed; /* Efecto Parallax sutil */
+}
+
+/* Overlay dorado sutil en el hero */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--gold) !important;
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.8), 0 0 20px rgba(255, 215, 0, 0.9);
+    line-height: 1.2;
+}
+
+.hero-section p.lead {
+    font-size: 1.5rem;
+    color: var(--white) !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    margin-top: 20px;
+}
+
+/* ESTILOS DEL BOTÓN GOLD - CAMBIOS PARA NARANJA BRILLANTE FIJO */
+.btn-gold {
+    background-color: var(--orange); /* Relleno Naranja Vibrante */
+    color: var(--hero-button-text); /* Texto blanco para contraste */
+    border: 3px solid var(--orange); /* Borde también naranja para un efecto más uniforme */
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* BRILLO NARANJA INTENSO CONSTANTE */
+    box-shadow: 0 0 35px rgba(255, 140, 0, 1), /* Brillo externo naranja fuerte */
+                0 0 20px rgba(255, 140, 0, 0.8) inset; /* Brillo interno naranja sutil */
+    filter: drop-shadow(0 0 25px rgba(255, 140, 0, 1.1)); /* Sombra para el contorno (naranja intenso) */
+}
+
+.btn-gold:hover {
+    /* Pequeño cambio al hover para dar interactividad, pero manteniendo el brillo naranja */
+    background-color: #FF6B00; /* Un naranja ligeramente diferente al hover */
+    color: var(--white); /* Texto blanco */
+    transform: translateY(-7px) scale(1.08);
+    /* Brillo al HOVER: aún más intenso o con un ligero cambio */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4),
+                0 0 50px rgba(255, 107, 0, 1.3), /* Brillo naranja aún más intenso */
+                0 0 25px rgba(255, 107, 0, 1) inset; /* Brillo interno más fuerte */
+    border-color: #FF6B00; /* Borde al hover */
+    filter: drop-shadow(0 0 30px rgba(255, 107, 0, 1.2)); /* Sombra aún más intensa */
+}
+
+.btn-outline-orange {
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    background-color: transparent;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.btn-outline-orange:hover {
+    background-color: var(--orange);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* About Us Section */
+#about img {
+    border-radius: 10px;
+    object-fit: cover;
+    height: 100%;
+    min-height: 300px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Nueva Sección: Misión y Visión */
+#mision-vision {
+    background-color: var(--light-orange);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#mision-vision h2 {
+    color: var(--dark-brown);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+#mision-vision .card {
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: var(--white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+#mision-vision .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.border-gold-mision {
+    border: 3px solid var(--gold) !important;
+}
+
+#mision-vision .card i {
+    color: var(--orange);
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 5px rgba(255, 140, 0, 0.5));
+}
+
+#mision-vision .card-title {
+    color: var(--dark-brown);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#mision-vision .card-text {
+    color: var(--text-color);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Product Cards */
+#productos {
+    background: linear-gradient(rgba(255, 236, 215, 0.85), rgba(255, 236, 215, 0.85)),
+        url('imagenes/polleria.jpg') no-repeat center center/cover; /* Imagen de fondo para productos */
+    background-attachment: fixed;
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card {
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.product-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25), 0 0 20px rgba(255, 215, 0, 0.8);
+    border-color: var(--gold);
+}
+
+.product-card img {
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.product-card .card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* min-height: 120px; /* Puedes descomentar y ajustar si las tarjetas se ven muy pequeñas */
+}
+
+.product-card .card-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px; /* Aumentado para separar del tag */
+    color: var(--orange);
+}
+
+.product-tag {
+    display: inline-block;
+    background-color: var(--gold);
+    color: var(--dark-brown);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Ligeramente más grande para llenar espacio */
+    font-weight: 600;
+    margin-top: auto; /* Asegura que se vaya al final del flex container */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--orange) 0%, #FF6B00 100%);
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+.cta-section h2 {
+    color: var(--gold) !important;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    font-size: 3rem;
+}
+.cta-section p.lead {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+}
+.cta-section .btn-gold {
+    /* Ajustado para el botón del CTA si también quieres un brillo */
+    border-color: var(--white);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5),
+                0 0 10px rgba(255, 255, 255, 0.3) inset;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+}
+.cta-section .btn-gold:hover {
+    border-color: var(--gold);
+    box-shadow: 0 0 35px rgba(255, 215, 0, 1),
+                0 0 20px rgba(255, 215, 0, 0.8) inset;
+    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 1.1));
+}
+
+/* Contact Section */
+#contacto {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+#contacto h2 {
+    color: var(--gold) !important;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}
+#contacto p.lead {
+    color: rgba(255,255,255,0.9) !important;
+}
+
+.contact-details .col-md-4 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contact-details .col-md-4:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    background-color: rgba(255, 215, 0, 0.08);
+}
+
+/* Estilos para el contenedor del icono */
+.contact-icon {
+    margin-bottom: 15px;
+}
+
+/* Estilos para los iconos de contacto */
+.contact-icon i {
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.9));
+}
+
+.contact-details h4 {
+    color: var(--gold) !important;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
+}
+.contact-details p {
+    color: var(--white) !important; /* Asegura el texto blanco para legibilidad */
+    font-weight: 400;
+    font-size: 1rem;
+}
+.contact-details p a {
+    color: var(--white) !important; /* Asegura el texto blanco para enlaces */
+    transition: color 0.3s ease;
+}
+.contact-details p a:hover {
+    color: var(--gold) !important;
+}
+
+/* Contact Section Map */
+.map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3), 0 0 30px rgba(255, 215, 0, 0.9);
+    border: 5px solid var(--gold);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Altura por defecto para cuando no hay iframe */
+    height: 350px; /* Ajusta según sea necesario */
+    display: flex; /* Para centrar el contenido si lo hay */
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+.map-container:hover {
+    transform: scale(1.01);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 40px rgba(255, 215, 0, 1);
+}
+.map-container iframe {
+    border-radius: 10px;
+    width: 100%; /* Asegura que el iframe ocupe todo el espacio si se reinserta */
+    height: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-brown);
+    color: var(--white);
+    padding: 25px 0;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    border-top: 3px solid var(--gold);
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.15);
+}
+
+footer p {
+    font-size: 0.95rem;
+    color: var(--white) !important;
+    margin-bottom: 0;
+}
+
+/* Estilos para los íconos de Redes Sociales en el Footer */
+.social-icons-footer a {
+    color: var(--gold) !important;
+    transition: transform 0.3s ease, color 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.7));
+}
+.social-icons-footer a:hover {
+    color: var(--white) !important;
+    transform: scale(1.1);
+    filter: none;
+}
+
+/* --- Botones Flotantes de Acceso Rápido --- */
+.quick-access-buttons {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.whatsapp-float, .facebook-float { /* Mantengo facebook-float por si en el futuro decides re-incluirlo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    font-size: 2em;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+}
+
+.whatsapp-float {
+    background-color: #25D366;
+}
+
+.facebook-float {
+    background-color: #1877F2;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    background-color: #1DA851;
+}
+
+.facebook-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    background-color: #145CB6;
+}
+
+/* Animaciones al Scroll (usando la clase 'reveal') */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Retrasos para animaciones escalonadas al scroll */
+.reveal-delay-0\.5s { transition-delay: 0.5s; }
+.reveal-delay-1s { transition-delay: 1s; }
+.reveal-delay-1\.5s { transition-delay: 1.5s; }
+
+/* Media Queries para Responsividad - Ajustes Finos */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: var(--orange);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+    .navbar-nav .nav-link {
+        font-size: 1.2rem;
+        color: var(--white) !important; /* Asegura texto blanco en mobile nav */
+        text-shadow: none;
+    }
+    .hero-section h2 {
+        font-size: 3rem;
+    }
+    .hero-section p.lead {
+        font-size: 1.2rem;
+    }
+    .btn-gold {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    #about img {
+        height: auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section h2 {
+        font-size: 2.5rem;
+    }
+    .hero-section p.lead {
+        font-size: 1rem;
+    }
+    .product-card .card-title {
+        font-size: 1.4rem;
+    }
+    .cta-section h2 {
+        font-size: 2.5rem;
+    }
+    .cta-section p.lead {
+        font-size: 1.1rem;
+    }
+    .contact-details .col-md-4 {
+        margin-bottom: 25px;
+    }
+    .quick-access-buttons {
+        bottom: 15px;
+        right: 15px;
+        gap: 10px;
+    }
+    .whatsapp-float, .facebook-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 575.98px) {
+    header .h1.text-white {
+        font-size: 1.5rem;
+    }
+    .logo-brand img {
+        max-height: 70px;
+    }
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+    .hero-section p.lead {
+        font-size: 0.9rem;
+    }
+    .btn-gold {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+}
